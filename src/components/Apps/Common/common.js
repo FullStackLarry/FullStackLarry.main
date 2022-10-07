@@ -11,7 +11,7 @@ export const inputDate = (date) => {
 
   const dt = new Date(date);
   const m = dt.getMonth() + 1;
-  const d = dt.getDate() + 1;
+  const d = dt.getDate();
   const y = dt.getFullYear();
   return (
     y.toString() +
