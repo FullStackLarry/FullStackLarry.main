@@ -22,7 +22,7 @@ export default function TMUserSettings(props) {
   useEffect(() => {
     const token = getToken();
     axios
-      .get(`${APIUrl()}users/avatar-list`, {
+      .get(`${APIUrl()}users/avatars/list`, {
         headers: { Authorization: token },
       })
       .then((res) => {
