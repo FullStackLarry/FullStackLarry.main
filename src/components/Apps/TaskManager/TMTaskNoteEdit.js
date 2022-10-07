@@ -29,8 +29,11 @@ export default function TMTaskNoteEdit(props) {
 
     const token = getToken();
 
+    const enteredDate = new Date();
+
     const body = {
       taskId: props.taskNote.taskId,
+      enteredDate: `${enteredDate.toLocaleDateString()} ${enteredDate.toLocaleTimeString()}`,
       note: note,
     };
 
