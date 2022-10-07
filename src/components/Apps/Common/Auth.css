@@ -1,3 +1,7 @@
+textarea {
+  font-family: "Abel", sans-serif;
+}
+
 .auth {
   font-family: "Abel", sans-serif;
   font-weight: bold;
@@ -49,6 +53,7 @@
 }
 
 .auth-info {
+  margin-bottom: 0.25em;
   font-weight: initial;
   color: yellow;
 }

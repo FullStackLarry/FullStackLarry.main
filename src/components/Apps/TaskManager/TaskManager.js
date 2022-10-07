@@ -20,6 +20,7 @@ import httpStatus from "../Data/httpStatus";
 import "../Common/common.css";
 import "./TaskManager.css";
 import { toast } from "react-toastify";
+import { inputDate } from "../Common/common";
 
 function TaskManager() {
   const [user, setUser] = useState(null);
@@ -239,6 +240,17 @@ function TaskManager() {
         })
         .then((res) => {
           if (res.status === httpStatus.OK) {
+            if (res.data && res.data.length > 0) {
+              res.data.forEach((t) => {
+                axios
+                  .get(`${APIUrl()}users/${t.owner}`, {
+                    headers: { Authorization: token },
+                  })
+                  .then((res) => {
+                    t.ownerName = `${res.data.firstName} ${res.data.lastName}`;
+                  });
+              });
+            }
             setTasks(res.data);
             if (res.data.length > 0) setCurrentTaskId(res.data[0]._id);
           }
@@ -261,12 +273,11 @@ function TaskManager() {
       task = {
         _id: null,
         ownerId: user._id,
-        ownerName: `${user.firstName} ${user.lastName}`,
         assignedTo: currentAssigneeId,
         name: "",
         desciption: "",
         status: "Not Started",
-        assignedDate: "",
+        assignedDate: inputDate(Date.now()),
         startedDate: "",
         completedDate: "",
       };

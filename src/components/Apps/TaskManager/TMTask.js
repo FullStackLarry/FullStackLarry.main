@@ -3,6 +3,7 @@ import React from "react";
 import "./TMTask.css";
 
 export default function TMTask(props) {
+  // console.log(props.task);
   return (
     <div
       className="tmtask"

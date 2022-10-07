@@ -58,7 +58,6 @@ export default function TMTaskEdit(props) {
     let body = {
       owner: props.task.ownerId,
       assignedTo: props.task.assignedTo,
-      ownerName: props.task.ownerName,
       name: name,
       description: description,
       status: status,
