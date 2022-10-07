@@ -10,7 +10,7 @@ import { APIUrl } from "../Data/api";
 import httpStatus from "../Data/httpStatus";
 import ModalSpinner from "../Common/ModalSpinner";
 
-import { inputDate } from "../Common/common";
+import { convertDate, displayDate } from "../Common/common";
 
 import "../Common/common.css";
 import "../Common/Auth.css";
@@ -25,13 +25,13 @@ export default function TMTaskEdit(props) {
   const [status, setStatus] = useState(props.task.status);
   const statusRef = useRef(null);
   const [assignedDate, setAssignedDate] = useState(
-    inputDate(props.task.assignedDate) || ""
+    convertDate(props.task.assignedDate)
   );
   const [startedDate, setStartedDate] = useState(
-    inputDate(props.task.startedDate) || ""
+    convertDate(props.task.startedDate)
   );
   const [completedDate, setCompletedDate] = useState(
-    inputDate(props.task.completedDate) || ""
+    convertDate(props.task.completedDate)
   );
   const [loading, setLoading] = useState(false);
 
@@ -61,9 +61,9 @@ export default function TMTaskEdit(props) {
       name: name,
       description: description,
       status: status,
-      assignedDate: assignedDate,
-      startedDate: startedDate,
-      completedDate: completedDate,
+      assignedDate: displayDate(assignedDate),
+      startedDate: displayDate(startedDate),
+      completedDate: displayDate(completedDate),
     };
 
     if (props.task._id) {

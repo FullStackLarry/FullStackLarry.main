@@ -26,11 +26,10 @@
 }
 
 .content-container {
-  width: 100vw;
   position: fixed;
+  width: 100%;
   top: 3.1rem;
-  height: calc(100vh - 3.1rem);
-  display: flex;
+  height: calc(100% - 3.1rem);
   justify-content: center;
   -webkit-animation: content-enter 1s;
   animation: content-enter 1s;

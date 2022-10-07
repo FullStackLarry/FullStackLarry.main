@@ -26,15 +26,15 @@
 }
 
 html {
-  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: "Share Tech Mono", monospace;
-  margin: 0;
-  padding: 0;
   background-color: black;
   color: white;
+  width: 100vw;
   height: 100vh;
 }
 
