@@ -286,9 +286,10 @@ function TaskManager() {
   };
 
   // Load task notes when task changes
+  const taskNotesString = JSON.stringify(taskNotes);
   useEffect(() => {
     loadTaskNotes();
-  }, [currentTaskId]);
+  }, [currentTaskId, taskNotesString]);
 
   const loadTaskNotes = () => {
     if (!currentTaskId) {
