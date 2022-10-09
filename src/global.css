@@ -10,7 +10,7 @@
   --primary-color: hsl(var(--primary-color-value), 50%, 50%);
   --primary-color-highlight: hsl(var(--primary-color-value), 50%, 60%);
   --tm-bg-color-1: #00b4db;
-  --tm-bg-color-2: #0090b0;
+  --tm-bg-color-2: hsl(184, 100%, 35%);
   --tm-bg-gradient: linear-gradient(
     to right,
     var(--tm-bg-color-1),
