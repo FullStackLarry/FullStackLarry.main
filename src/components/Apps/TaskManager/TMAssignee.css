@@ -6,6 +6,7 @@
   background-color: white;
   color: black;
   border: 2px solid white;
+  border-radius: 1em;
 }
 
 .tmassignee[data-selected="true"] {
@@ -20,6 +21,7 @@
 
 .tmassignee > img {
   width: 4em;
+  border-radius: 1em;
 }
 
 .tmassignee > span {
