@@ -261,7 +261,7 @@ function TaskManager() {
     if (taskId === null) {
       task = {
         _id: null,
-        ownerId: user._id,
+        owner: user._id,
         assignedTo: currentAssigneeId,
         name: "",
         desciption: "",

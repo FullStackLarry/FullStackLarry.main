@@ -36,7 +36,7 @@ export default function TMTaskEdit(props) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (props.user._id === props.task.ownerId) nameRef.current.focus();
+    if (props.user._id === props.task.owner) nameRef.current.focus();
     else statusRef.current.focus();
   }, []);
 
@@ -56,7 +56,7 @@ export default function TMTaskEdit(props) {
     const token = getToken();
 
     let body = {
-      owner: props.task.ownerId,
+      owner: props.task.owner,
       assignedTo: props.task.assignedTo,
       name: name,
       description: description,
@@ -134,6 +134,7 @@ export default function TMTaskEdit(props) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               ref={nameRef}
+              disabled={props.task.owner !== props.user._id}
             />
           </div>
           <div className="auth-group">
@@ -146,6 +147,7 @@ export default function TMTaskEdit(props) {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               ref={descriptionRef}
+              disabled={props.task.owner !== props.user._id}
             />
             <div className="auth-info">{`${
               description ? 200 - description.length : 200
