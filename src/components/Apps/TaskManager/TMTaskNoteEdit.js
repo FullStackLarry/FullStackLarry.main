@@ -32,13 +32,13 @@ export default function TMTaskNoteEdit(props) {
     const enteredDate = new Date();
 
     const body = {
-      taskId: props.taskNote.taskId,
+      task: props.taskNote.task,
       enteredDate: `${enteredDate.toLocaleDateString()} ${enteredDate.toLocaleTimeString()}`,
       note: note,
     };
 
     if (props.taskNote._id) {
-      body.taskNoteId = props.taskNote._id;
+      body._id = props.taskNote._id;
       axios
         .put(`${APIUrl()}TM/tasknotes`, body, {
           headers: { Authorization: token },

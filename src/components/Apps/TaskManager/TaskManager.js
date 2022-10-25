@@ -161,8 +161,12 @@ function TaskManager() {
       axios
         .get(`${APIUrl()}TM/assignees`, { headers: { Authorization: token } })
         .then((res) => {
-          if (res.status === httpStatus.OK) {
-            setAssignees([user, ...res.data]);
+          if (
+            res.status === httpStatus.OK ||
+            res.status === httpStatus.NO_CONTENT
+          ) {
+            if (res.status === httpStatus.OK) setAssignees([user, ...res.data]);
+            else setAssignees([user]);
             setCurrentAssigneeId(user._id);
             setLoginOpen(false);
           }
@@ -324,7 +328,7 @@ function TaskManager() {
     if (taskNoteId === null) {
       taskNote = {
         _id: null,
-        taskId: currentTaskId,
+        task: currentTaskId,
         ownerId: user._id,
         note: "",
       };

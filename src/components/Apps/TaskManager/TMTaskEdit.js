@@ -67,7 +67,7 @@ export default function TMTaskEdit(props) {
     };
 
     if (props.task._id) {
-      body.taskId = props.task._id;
+      body._id = props.task._id;
       axios
         .put(`${APIUrl()}TM/tasks`, body, {
           headers: { Authorization: token },
