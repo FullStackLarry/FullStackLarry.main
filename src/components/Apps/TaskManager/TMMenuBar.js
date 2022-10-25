@@ -5,6 +5,11 @@ import { APIBase } from "../Data/api";
 import "./TMMenuBar.css";
 
 export default function TMMenuBar(props) {
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
+
   return (
     <div className="tmmenubar">
       <div className="tmmenubar-title">Task Manager</div>
@@ -18,6 +23,12 @@ export default function TMMenuBar(props) {
         </div>
       )}
       <div className="tmmenubar-buttons">
+        <button
+          className="tmmenubar-button"
+          onClick={() => openInNewTab("/FSLTaskManagerSetup.msi")}
+        >
+          Download Windows App
+        </button>
         <button
           hidden={props.loggedIn}
           className="tmmenubar-button"
