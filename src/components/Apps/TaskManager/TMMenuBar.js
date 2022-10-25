@@ -5,7 +5,8 @@ import { APIBase } from "../Data/api";
 import "./TMMenuBar.css";
 
 export default function TMMenuBar(props) {
-  const openInNewTab = (url) => {
+  const downloadWindowsApp = () => {
+    const url = "https://FullStackLarry.com/Downloads/FSLTaskManagerSetup.msi";
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
     if (newWindow) newWindow.opener = null;
   };
@@ -25,7 +26,7 @@ export default function TMMenuBar(props) {
       <div className="tmmenubar-buttons">
         <button
           className="tmmenubar-button"
-          onClick={() => openInNewTab("/FSLTaskManagerSetup.msi")}
+          onClick={() => downloadWindowsApp()}
         >
           Download Windows App
         </button>
