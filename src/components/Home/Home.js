@@ -52,25 +52,6 @@ function Home() {
       <div id="experience" className="home-section">
         <h2>Experience</h2>
         <div className="home-section-border">
-          <span className="resume-company">N/A</span>
-          <br />
-          <span className="resume-title">Freelance Developer</span>
-          <br />
-          <span className="resume-dates">July 2019 to Present</span>
-          <ul className="resume-list">
-            <li>
-              Developed, updated and maintained intranet sites utilizing React,
-              Node and MongoDB.
-            </li>
-            <li>
-              Developed, updated and maintained intranet sites utilizing ASP.Net
-              and SQL Server.
-            </li>
-            <li>
-              Developed, updated and maintained Windows applications utilizing
-              C#.
-            </li>
-          </ul>
           <span className="resume-company">
             Santa Rosa County School District
           </span>
